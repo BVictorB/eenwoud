@@ -26,7 +26,20 @@
 /*                                    Pages                                   */
 /* -------------------------------------------------------------------------- */
 
-body {
+#root {
+  width: 100vw;
+  height: 100vh;
   background-color: $green;
   color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+.district {
+  pointer-events: none;
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
 }
