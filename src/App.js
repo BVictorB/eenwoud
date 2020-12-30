@@ -1,27 +1,28 @@
 import { useState, useEffect } from 'react'
 import { json } from 'd3'
 import Map from './components/Map'
+import * as topojson from 'topojson-client'
 
 const App = () => {
-  const [geoDataNetherlands, setGeoDataNetherlands] = useState(null)
-  const [geoDataTrees, setGeoDataTrees] = useState(null)
+  const [geoCountryData, setGeoCountryData] = useState(null)
 
-  const geoData = 'https://gist.githubusercontent.com/BVictorB/ada1109582e22f353dec4084ce78cdbf/raw/65c235e14a8256470cec6b8bcb918523e524193d/geojson-netherlands.json'
-  const treeData = 'https://gist.githubusercontent.com/BVictorB/7dd5bbe2103d818efee528b8121250f5/raw/bd2a58d4d717f4b93170ff684e3478397415e9c4/trees.json'
+  const countryData = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json'
 
   useEffect(() => {
-    json(geoData).then(data => {
-      setGeoDataNetherlands(data)
-    })
-
-    json(treeData).then(data => {
-      setGeoDataTrees(data)
-    })
+    if (localStorage.getItem('countryData')) {
+      setGeoCountryData(JSON.parse(localStorage.getItem('countryData')))
+    } else {
+      json(countryData).then(data => {
+        const countryFeatures = topojson.feature(data, data.objects.countries)
+        setGeoCountryData(countryFeatures)
+        localStorage.setItem('countryData', JSON.stringify(countryFeatures))
+      })
+    }
   }, [])
 
   return (
     <>
-      {geoDataNetherlands && geoDataTrees ? <Map geoDataNetherlands={geoDataNetherlands} geoDataTrees={geoDataTrees}/> : null}
+      {geoCountryData ? <Map geoCountryData={geoCountryData} size={600} /> : null}
     </>
   )
 }
