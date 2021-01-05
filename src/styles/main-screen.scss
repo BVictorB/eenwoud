@@ -39,9 +39,30 @@
   stroke-width: .5px;
 }
 
-svg {
+.sphere {
   margin: 100px;
   background: rgb(0,148,247);
   background: linear-gradient(0deg, rgba(0,96,162,1) 0%, rgba(0,148,247,1) 100%);
   border-radius: 50%;
+}
+
+.map {
+  background-color: #90B0A1;
+}
+
+.lightbox {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  width: 500px;
+  height: 500px;
+  background-color: $darkgreen;
+  color: white;
+  padding: 10px 25px;
+
+  img {
+    width: 100px;
+    margin: 20px 0;
+    display: block;
+  }
 }

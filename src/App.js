@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 import { json } from 'd3'
-import Map from './components/Map'
 import * as topojson from 'topojson-client'
+import Sphere from './components/Sphere'
+import Map from './components/Map'
+import Lightbox from './components/Lightbox'
 
 const App = () => {
-  const [geoCountryData, setGeoCountryData] = useState(null)
-
-  const countryData = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json'
+  const 
+    [geoCountryData, setGeoCountryData] = useState(null),
+    [lightboxContent, setLightboxContent] = useState(null),
+    countryData = 'https://unpkg.com/world-atlas@2.0.2/countries-50m.json'
 
   useEffect(() => {
     if (localStorage.getItem('countryData')) {
@@ -22,7 +25,9 @@ const App = () => {
 
   return (
     <>
-      {geoCountryData ? <Map geoCountryData={geoCountryData} size={600} /> : null}
+      {/* {lightboxContent ? <Lightbox lightboxContent={lightboxContent} setLightboxContent={setLightboxContent}/> : null} */}
+      {geoCountryData ? <Sphere geoCountryData={geoCountryData} size={600} /> : null}
+      {/* <Map setLightboxContent={setLightboxContent}/> */}
     </>
   )
 }
