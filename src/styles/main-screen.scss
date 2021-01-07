@@ -20,7 +20,7 @@
 /* -------------------------------------------------------------------------- */
 /*                                   Modules                                  */
 /* -------------------------------------------------------------------------- */
-
+@import './modules/m-intro';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Pages                                   */
@@ -29,21 +29,6 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background: black;
-  background: linear-gradient(45deg, rgb(50,50,50) 0%, rgb(0,0,0) 100%);
-}
-
-.countries {
-  fill: #6CCC00;
-  stroke: #fff;
-  stroke-width: .5px;
-}
-
-.sphere {
-  margin: 100px;
-  background: rgb(0,148,247);
-  background: linear-gradient(0deg, rgba(0,96,162,1) 0%, rgba(0,148,247,1) 100%);
-  border-radius: 50%;
 }
 
 .map {

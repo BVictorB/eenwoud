@@ -1,0 +1,49 @@
+.m-intro {
+  background: #053849;
+  color: white;
+
+  &__planet {
+    height: 100vh;
+    padding: 100px;
+
+    .logo {
+      height: 20vh;
+      max-height: 150px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .planet {
+      height: 50vh;
+      margin: 10vh auto 0;
+      display: block;
+      animation: animatePlanet 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes animatePlanet {
+      from {
+        transform: translateY(-10px);
+      }
+      to {
+        transform: translateY(10px)
+      }
+    }
+  }
+
+  &__info {
+    height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 50px;
+
+    h2 {
+      font-size: 128px;
+      font-family: CryptCreep;
+      font-weight: 100;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+}
