@@ -1,10 +1,24 @@
+import { useState } from 'react'
 import {ReactComponent as EenwoudLogo} from '../assets/images/eenwoud-logo.svg'
 import {ReactComponent as Planet} from '../assets/images/planet.svg'
 
 const Intro = () => {
+  const 
+    [planetActive, setPlanetActive] = useState(false),
+    [hidePlanet, setHidePlanet] = useState(false),
+    [bottomPlanet, setBottomPlanet] = useState(false)
+
+  document.addEventListener('scroll', () => {
+    window.innerHeight*2.5 > window.scrollY && window.scrollY > window.innerHeight/2 ? setPlanetActive(true) : setPlanetActive(false)
+    window.scrollY > window.innerHeight/2 ? setHidePlanet(true) : setHidePlanet(false)
+    window.scrollY > window.innerHeight*2.5 ? setBottomPlanet(true) : setBottomPlanet(false)
+  })
   return (
     <div className='m-intro'>
-      <div className='m-intro__planet'>
+      <div className={planetActive ? 'm-intro__sideplanet active' : 'm-intro__sideplanet'}>
+        <Planet />
+      </div>
+      <div className={hidePlanet ? 'm-intro__planet hide' : 'm-intro__planet'}>
         <EenwoudLogo className='logo' />
         <Planet className='planet' />
       </div>
@@ -16,8 +30,7 @@ const Intro = () => {
         <h2>Bomen zijn belangrijk voor ons</h2>
         <p>Zoals net verteld is wordt zuurstof gevormd doordat planten waarvan vooral bomen CO2 omzetten in zuurstof. Zuurstof hebben wij weer nodig om van te leven. Niet iedereen weet dat bomen eigenlijk zo belangrijk voor ons zijn. Het is goed om daar bewust van te zijn. Naast dat bomen zuurstof produceren voor ons, kunnen bomen ook een persoonlijke betekenis hebben voor mensen. Er zijn genoeg mensen die bijvoorbeeld een bepaalde herinnering hebben bij een specifieke boom.</p>
       </div>
-      <div className='m-intro__planet'>
-        <EenwoudLogo className='logo' />
+      <div className={bottomPlanet ? 'm-intro__planet' : 'm-intro__planet hide'}>
         <Planet className='planet' />
       </div>
     </div>

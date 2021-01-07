@@ -5,6 +5,8 @@
   &__planet {
     height: 100vh;
     padding: 100px;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 
     .logo {
       height: 20vh;
@@ -45,5 +47,21 @@
     p {
       font-size: 24px;
     }
+  }
+
+  &__sideplanet {
+    width: 500px;
+    position: fixed;
+    left: -1000px;
+    top: 250px;
+    transition: left 1s ease-in-out;
+  }
+
+  .active {
+    left: -250px;
+  }
+
+  .hide {
+    transform: translateX(-100vw);
   }
 }
