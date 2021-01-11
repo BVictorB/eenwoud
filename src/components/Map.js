@@ -6,7 +6,9 @@ const Map = ({ setLightboxContent }) => {
     {
       tree: 'beuk',
       color: 'groen',
-      name: 'Han Oomen'
+      name: 'Han Oomen',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales cursus volutpat. Curabitur aliquam nulla sit amet tempor dapibus. Duis non molestie enim, eget dapibus tellus. Aenean maximus ligula vitae mauris semper cursus. Donec a nisl ut orci pellentesque mattis non vitae tortor. Fusce sit amet dolor vestibulum, rhoncus erat et, tincidunt elit. Quisque rhoncus erat eu orci tincidunt condimentum. Morbi vestibulum mi eget hendrerit aliquet. Nulla a scelerisque ante. Duis gravida sit amet diam a tincidunt.',
+      image: treeImage
     },
     {
       tree: 'eik',
@@ -50,14 +52,12 @@ const Map = ({ setLightboxContent }) => {
     }
   ]
 
-  const treeInfo = (tree) => {
-    setLightboxContent(tree)
-  }
-
   return (
-    <svg className='map' width='100%' height='100%'>
-      {data.map((tree, index) => (<image href={treeImage} height='100' width='100' y={index >= 5 ? 200 : 50} x={index >= 5 ? 150*index - 750 : 150*index} key={index} onClick={() => treeInfo(tree)}/>))}
-    </svg>
+    <div className='map'>
+        <svg className='map' width='100%' height='100%'>
+          {data.map((tree, index) => (<image href={treeImage} height='100' width='100' y={index >= 5 ? 200 : 50} x={index >= 5 ? 150*index - 750 : 150*index} key={index} onClick={() => setLightboxContent(tree)}/>))}
+        </svg>
+    </div>
   )
 }
 

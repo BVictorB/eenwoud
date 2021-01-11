@@ -1,0 +1,36 @@
+.m-lightbox {
+  position: fixed;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 800px;
+  background-color: $darkgreen;
+  color: white;
+  padding: 10px 25px;
+  display: flex;
+  border-radius: 30px;
+
+  &__column {
+    width: 50%;
+  }
+
+  button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  h1 {
+    font-size: 64px;
+    font-family: CryptCreep;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  img {
+    width: 100px;
+    margin: 20px 0;
+    display: block;
+  }
+}

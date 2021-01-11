@@ -21,15 +21,6 @@
       display: block;
       animation: animatePlanet 1.5s ease-in-out infinite alternate;
     }
-
-    @keyframes animatePlanet {
-      from {
-        transform: translateY(-10px);
-      }
-      to {
-        transform: translateY(10px)
-      }
-    }
   }
 
   &__info {
@@ -55,6 +46,7 @@
     left: -1000px;
     top: 250px;
     transition: left 1s ease-in-out;
+    animation: animatePlanet 1.5s ease-in-out infinite alternate;
   }
 
   .active {
@@ -63,5 +55,18 @@
 
   .hide {
     transform: translateX(-100vw);
+  }
+
+  .zoom {
+    transform: scale(100);
+  }
+
+  @keyframes animatePlanet {
+    from {
+      transform: translateY(-10px);
+    }
+    to {
+      transform: translateY(10px)
+    }
   }
 }

@@ -21,6 +21,7 @@
 /*                                   Modules                                  */
 /* -------------------------------------------------------------------------- */
 @import './modules/m-intro';
+@import './modules/m-lightbox';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Pages                                   */
@@ -29,25 +30,19 @@
 #root {
   width: 100vw;
   height: 100vh;
+  background-color: #90B0A1;
 }
 
 .map {
   background-color: #90B0A1;
+  animation: fadein 500ms;
 }
 
-.lightbox {
-  position: fixed;
-  top: 100px;
-  right: 100px;
-  width: 500px;
-  height: 500px;
-  background-color: $darkgreen;
-  color: white;
-  padding: 10px 25px;
-
-  img {
-    width: 100px;
-    margin: 20px 0;
-    display: block;
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -5,14 +5,14 @@ import Intro from './components/Intro'
 
 const App = () => {
   const 
-    [geoCountryData, setGeoCountryData] = useState(null),
-    [lightboxContent, setLightboxContent] = useState(null)
+    [lightboxContent, setLightboxContent] = useState(null),
+    [navigation, setNavigation] = useState('map')
 
   return (
     <>
-      {/* {lightboxContent ? <Lightbox lightboxContent={lightboxContent} setLightboxContent={setLightboxContent}/> : null} */}
-      {/* <Map setLightboxContent={setLightboxContent}/> */}
-      <Intro />
+      {lightboxContent ? <Lightbox lightboxContent={lightboxContent} setLightboxContent={setLightboxContent}/> : null}
+      {navigation === 'intro' ? <Intro setNavigation={setNavigation}/> : null}
+      {navigation === 'map' ? <Map setLightboxContent={setLightboxContent}/> : null}
     </>
   )
 }
