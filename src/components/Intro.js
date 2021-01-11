@@ -16,7 +16,7 @@ const Intro = ({ setNavigation }) => {
   })
   return (
     <div className='m-intro'>
-      <div className={planetActive ? 'm-intro__sideplanet active' : 'm-intro__sideplanet'}>
+      <div className={planetActive ? 'm-intro__sideplanet m-intro__sideplanet--active' : 'm-intro__sideplanet'}>
         <Planet />
       </div>
       <div className={hidePlanet ? 'm-intro__planet hide' : 'm-intro__planet'}>

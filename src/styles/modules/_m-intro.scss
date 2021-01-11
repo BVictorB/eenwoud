@@ -47,10 +47,10 @@
     top: 250px;
     transition: left 1s ease-in-out;
     animation: animatePlanet 1.5s ease-in-out infinite alternate;
-  }
-
-  .active {
-    left: -250px;
+  
+    &--active {
+      left: -250px;
+    }
   }
 
   .hide {
