@@ -31,7 +31,7 @@ const Intro = ({ setNavigation }) => {
         <h2>Bomen zijn belangrijk voor ons</h2>
         <p>Zoals net verteld is wordt zuurstof gevormd doordat planten waarvan vooral bomen CO2 omzetten in zuurstof. Zuurstof hebben wij weer nodig om van te leven. Niet iedereen weet dat bomen eigenlijk zo belangrijk voor ons zijn. Het is goed om daar bewust van te zijn. Naast dat bomen zuurstof produceren voor ons, kunnen bomen ook een persoonlijke betekenis hebben voor mensen. Er zijn genoeg mensen die bijvoorbeeld een bepaalde herinnering hebben bij een specifieke boom.</p>
       </div>
-      <div className={`m-intro__planet ${bottomPlanet ? '' : 'hide'} ${zoom ? 'zoom' : ''}`}>
+      <div className={`m-intro__planet ${bottomPlanet ? '' : 'hide'} ${zoom ? 'zoom' : ''} m-intro__planet--clickable`}>
         <Planet className='planet' onClick={() => {
           setZoom(true)
           setTimeout(() => {

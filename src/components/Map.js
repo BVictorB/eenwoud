@@ -19,11 +19,9 @@ const Map = ({ setLightboxContent }) => {
     <div className="m-map">
       <svg ref={svgEl} width="100%" height="100%">
         <g className="group" ref={svgGroup}>
-          <g className="trees">
-              {trees.map((tree, index) => (
-                <image onClick={() => setLightboxContent(tree)} href={tree.image} key={index} className="tree" x={projection(tree.coords)[0]-20} y={projection(tree.coords)[1]-20} width="40" height="40" />
-              ))}
-            </g>
+          {trees.map((tree, index) => (
+            <image onClick={() => setLightboxContent(tree)} href={tree.image} key={index} className="tree" x={projection(tree.coords)[0]-20} y={projection(tree.coords)[1]-20} width="40" height="40" />
+          ))}
         </g>
       </svg>
       <div className={showTooltip ? 'm-map__tooltip m-map__tooltip--active' : 'm-map__tooltip'}>

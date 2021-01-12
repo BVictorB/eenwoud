@@ -8,6 +8,10 @@
     transform: translateX(0);
     transition: transform 1s ease-in-out;
 
+    &--clickable {
+      cursor: pointer;
+    }
+
     .logo {
       height: 20vh;
       max-height: 150px;
@@ -41,7 +45,7 @@
   }
 
   &__sideplanet {
-    width: 500px;
+    width: 20vw;
     position: fixed;
     left: -1000px;
     top: 250px;
@@ -49,7 +53,7 @@
     animation: animatePlanet 1.5s ease-in-out infinite alternate;
   
     &--active {
-      left: -250px;
+      left: -10vw;
     }
   }
 
