@@ -7,7 +7,7 @@ import Intro from './components/Intro'
 const App = () => {
   const 
     [lightboxContent, setLightboxContent] = useState(null),
-    [navigation, setNavigation] = useState('intro'),
+    [navigation, setNavigation] = useState('map'),
     [geoDataNetherlands, setGeoDataNetherlands] = useState(null)
 
   const geoData = 'https://gist.githubusercontent.com/BVictorB/ada1109582e22f353dec4084ce78cdbf/raw/65c235e14a8256470cec6b8bcb918523e524193d/geojson-netherlands.json'
@@ -20,9 +20,9 @@ const App = () => {
 
   return (
     <>
-      {lightboxContent ? <Lightbox lightboxContent={lightboxContent} setLightboxContent={setLightboxContent} geoDataNetherlands={geoDataNetherlands}/> : null}
       {navigation === 'intro' ? <Intro setNavigation={setNavigation}/> : null}
       {navigation === 'map' ? <Map setLightboxContent={setLightboxContent} /> : null}
+      {lightboxContent ? <Lightbox lightboxContent={lightboxContent} setLightboxContent={setLightboxContent} geoDataNetherlands={geoDataNetherlands}/> : null}
     </>
   )
 }

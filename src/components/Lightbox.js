@@ -5,10 +5,10 @@ const Lightbox = ({ lightboxContent, setLightboxContent, geoDataNetherlands }) =
     <div className='m-lightbox'>
       <div className='m-lightbox__column'>
         {lightboxContent.pictures.map((picture, index) => (
-          <>
+          <div key={index}>
             <img className='m-lightbox__picture' src={picture} alt=""/>
             <p>{lightboxContent.pictureText[index]}</p>
-          </>
+          </div>
         ))}
         <div className='m-lightbox__map'>
           {geoDataNetherlands && lightboxContent.coordsNL && lightboxContent.image ? <TreeMap geoDataNetherlands={geoDataNetherlands} coordsNL={lightboxContent.coordsNL} treeImage={lightboxContent.image}/> : null}

@@ -1,7 +1,6 @@
 import { projection, pathGenerator } from '../helper/d3Variables'
 
 const TreeMap = ({ geoDataNetherlands, coordsNL, treeImage }) => {
-  console.log(treeImage)
   return (
     <svg width="100%" height="100%">
       <g className="group">
