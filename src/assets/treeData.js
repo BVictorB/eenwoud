@@ -25,7 +25,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Noord-Holland'
+    province: 'Noord-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'eik',
@@ -37,7 +40,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Noord-Holland'
+    province: 'Noord-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'eik',
@@ -49,7 +55,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Noord-Holland'
+    province: 'Noord-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'beuk',
@@ -61,7 +70,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Friesland'
+    province: 'Friesland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'beuk',
@@ -73,7 +85,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Friesland'
+    province: 'Friesland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'beuk',
@@ -85,7 +100,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Friesland'
+    province: 'Friesland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'den',
@@ -97,7 +115,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Utrecht'
+    province: 'Utrecht',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'den',
@@ -109,7 +130,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Utrecht'
+    province: 'Utrecht',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'den',
@@ -121,7 +145,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Utrecht'
+    province: 'Utrecht',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'olijf',
@@ -133,7 +160,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Gelderland'
+    province: 'Gelderland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'olijf',
@@ -145,7 +175,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Gelderland'
+    province: 'Gelderland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'olijf',
@@ -157,7 +190,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Gelderland'
+    province: 'Gelderland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'esdoorn',
@@ -169,7 +205,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Gelderland'
+    province: 'Gelderland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'esdoorn',
@@ -181,7 +220,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Drenthe'
+    province: 'Drenthe',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'esdoorn',
@@ -193,7 +235,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Drenthe'
+    province: 'Drenthe',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'kastanje',
@@ -205,7 +250,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Drenthe'
+    province: 'Drenthe',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'kastanje',
@@ -217,7 +265,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Drenthe'
+    province: 'Drenthe',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'kastanje',
@@ -229,7 +280,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Zuid-Holland'
+    province: 'Zuid-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'hazelaar',
@@ -241,7 +295,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Zuid-Holland'
+    province: 'Zuid-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   },
   {
     tree: 'hazelaar',
@@ -253,7 +310,10 @@ const trees = [
     pictureText: ['Han schat in dat de Zomereik al 100 jaar oud is.', 'Han Oomen (56) in de Zomereik.'],
     coords: [randomNumber(5), randomNumber(5)],
     coordsNL: [4.8, 51.62],
-    province: 'Zuid-Holland'
+    province: 'Zuid-Holland',
+    treeAge: 100,
+    personAge: 50,
+    expectedAge: 600
   }
 ]
 

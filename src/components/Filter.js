@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Netherlands from './Netherlands'
+import Slider from './Slider'
 
 const Filter = ({ treeData, setFilteredTreeData }) => {
     // const test = treeData.filter(item => Object.values(item).includes(treeType))
@@ -9,7 +10,10 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
     [filterOptions, setFilterOptions] = useState({
       treeType: null,
       emotion: null,
-      province: null
+      province: null,
+      treeAge: null,
+      personAge: null,
+      expectedAge: null
     }),
     treeTypes = [...new Set(treeData.map(item => item.tree))],
     emotions = [...new Set(treeData.map(item => item.emotion))]
@@ -19,13 +23,16 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
       let filterType = filterOptions.treeType ? item.tree === filterOptions.treeType : item.tree
       let filterEmotion = filterOptions.emotion ? item.emotion === filterOptions.emotion : item.emotion
       let filterProvince = filterOptions.province ? item.province === filterOptions.province : item.province
-      return filterType && filterEmotion && filterProvince
+      let filterTreeAge = filterOptions.treeAge ? item.treeAge > filterOptions.treeAge : item.treeAge
+      let filterPersonAge = filterOptions.personAge ? item.personAge > filterOptions.personAge : item.personAge
+      let filterExpectedAge = filterOptions.expectedAge ? item.expectedAge > filterOptions.expectedAge : item.expectedAge
+      return filterType && filterEmotion && filterProvince && filterTreeAge && filterPersonAge && filterExpectedAge
     })
     setFilteredTreeData(filteredTrees)
   }, [filterOptions, treeData, setFilteredTreeData])
 
   return (
-    <div className="m-filter">
+    <div className='m-filter'>
       <h1>Filter</h1>
       <p>Selecteer filters om te filteren tussen bomen...</p>
       <h2>Soort boom</h2>
@@ -52,6 +59,9 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
       ))}
       <h2>Afkomst boom</h2>
       <Netherlands filterOptions={filterOptions} setFilterOptions={setFilterOptions}/>
+      <Slider sliderName='Leeftijd persoon' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, personAge: e.target.value }))} sliderValue={filterOptions.personAge === null ? 'alle leeftijden' : `${filterOptions.personAge} jaar`} limit='100'/>
+      <Slider sliderName='Leeftijd boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, treeAge: e.target.value }))} sliderValue={filterOptions.treeAge === null ? 'alle leeftijden' : `${filterOptions.treeAge} jaar`} limit='1000'/>
+      <Slider sliderName='Levensverwachting boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, expectedAge: e.target.value }))} sliderValue={filterOptions.expectedAge === null ? 'alle levensverwachtingen' : `${filterOptions.expectedAge} jaar`} limit='1000'/>
     </div>
   )
 }
