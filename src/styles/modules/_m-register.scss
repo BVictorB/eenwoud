@@ -1,0 +1,46 @@
+.m-register {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+
+  &__container {
+    width: 80vw;
+    max-width: 1440px;
+    height: 800px;
+    background-color: $darkgreen;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px 25px;
+    color: white;
+
+    &--flex {
+      display: flex;
+    }
+  }
+
+  &__column {
+    width: 50%;
+    padding: 20px;
+  }
+
+  h1 {
+    margin: 0;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+
+    input {
+      margin-right: 10px;
+
+      &[type=text], &[type=file] {
+        display: block;
+      }
+    }
+
+    textarea {
+      display: block;
+    }
+  }
+}
