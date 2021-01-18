@@ -59,9 +59,9 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
       ))}
       <h2>Afkomst boom</h2>
       <Netherlands filterOptions={filterOptions} setFilterOptions={setFilterOptions}/>
-      <Slider sliderName='Leeftijd persoon' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, personAge: e.target.value }))} sliderValue={filterOptions.personAge === null ? 'alle leeftijden' : `${filterOptions.personAge} jaar`} limit='100'/>
-      <Slider sliderName='Leeftijd boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, treeAge: e.target.value }))} sliderValue={filterOptions.treeAge === null ? 'alle leeftijden' : `${filterOptions.treeAge} jaar`} limit='1000'/>
-      <Slider sliderName='Levensverwachting boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, expectedAge: e.target.value }))} sliderValue={filterOptions.expectedAge === null ? 'alle levensverwachtingen' : `${filterOptions.expectedAge} jaar`} limit='1000'/>
+      <Slider sliderName='Leeftijd persoon' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, personAge: e.target.value }))} sliderValue={filterOptions.personAge === null ? 'alle leeftijden' : `tot ${filterOptions.personAge} jaar`} limit='100'/>
+      <Slider sliderName='Leeftijd boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, treeAge: e.target.value }))} sliderValue={filterOptions.treeAge === null ? 'alle leeftijden' : `tot ${filterOptions.treeAge} jaar`} limit='1000'/>
+      <Slider sliderName='Levensverwachting boom' sliderFunction={(e) => setFilterOptions((prevState) => ( { ...prevState, expectedAge: e.target.value }))} sliderValue={filterOptions.expectedAge === null ? 'alle levensverwachtingen' : `tot ${filterOptions.expectedAge} jaar`} limit='1000'/>
     </div>
   )
 }
