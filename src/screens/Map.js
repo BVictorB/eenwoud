@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { select, zoom, geoMercator } from 'd3'
 import trees from '../assets/treeData'
-import Filter from './Filter'
+import Filter from '../components/Filter'
 
 const Map = ({ setLightboxContent }) => {
   const

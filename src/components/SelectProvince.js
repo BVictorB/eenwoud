@@ -1,4 +1,4 @@
-const Netherlands = ({ filterOptions, setFilterOptions }) => {
+const SelectProvince = ({ filterOptions, setFilterOptions }) => {
   const selectProvince = (selectedProvince) => {
     setFilterOptions((prevState) => ({ ...prevState, province: selectedProvince === prevState.province ? null : selectedProvince }))
   }
@@ -49,4 +49,4 @@ const Netherlands = ({ filterOptions, setFilterOptions }) => {
   )
 }
 
-export default Netherlands
+export default SelectProvince

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import Netherlands from './Netherlands'
+import Netherlands from './SelectProvince'
 import Slider from './Slider'
 
 const Filter = ({ treeData, setFilteredTreeData }) => {
