@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { select, zoom, geoMercator, pointer } from 'd3'
 import trees from '../assets/treeData'
-import tree from '../assets/images/treesNew/populier.png'
+import tree from '../assets/images/trees/populier.png'
 
 const PickLocation = ({ setFormData }) => {
   const

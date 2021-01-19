@@ -9,7 +9,7 @@ const App = () => {
   const 
     [lightboxContent, setLightboxContent] = useState(null),
     [showLightbox, setShowLightbox] = useState(false),
-    [navigation, setNavigation] = useState('register'),
+    [navigation, setNavigation] = useState('intro'),
     [geoDataNetherlands, setGeoDataNetherlands] = useState(null)
 
   const geoData = 'https://gist.githubusercontent.com/BVictorB/ada1109582e22f353dec4084ce78cdbf/raw/65c235e14a8256470cec6b8bcb918523e524193d/geojson-netherlands.json'
