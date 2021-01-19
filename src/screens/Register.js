@@ -3,9 +3,10 @@ import FileInput from '../components/FileInput'
 import TextInput from '../components/TextInput'
 import TextareaInput from '../components/TextareaInput'
 import RadioInput from '../components/RadioInput'
+import PickLocation from '../components/PickLocation'
 
 const Register = () => {
-  const [step, setStep] = useState(0)
+  const [step, setStep] = useState(4)
   const [formData, setFormData] = useState({
     name: null,
     age: null,
@@ -37,10 +38,11 @@ const Register = () => {
       {step === 1 ? <Register2 setFormData={setFormData} /> : null}
       {step === 2 ? <Register3 setFormData={setFormData} /> : null}
       {step === 3 ? <Register4 setFormData={setFormData} /> : null}
+      {step === 4 ? <Register5 setFormData={setFormData} /> : null}
       <div className="m-register__button-container">
         {step !== 0 ? <button onClick={() => prevPage()}>Vorige</button> : null}
-        {step !== 3 ? <button onClick={() => nextPage()}>Volgende</button> : null}
-        {step === 3 ? <button onClick={() => finishForm()}>finish</button> : null}
+        {step !== 4 ? <button onClick={() => nextPage()}>Volgende</button> : null}
+        {step === 4 ? <button onClick={() => finishForm()}>finish</button> : null}
       </div>
     </div>
   </div>
@@ -130,6 +132,24 @@ const Register4 = ({ setFormData }) => {
           name={'emotion'}
           onRadioChange={(option) => updateFormData('emotion', option)}
         />
+      </div>
+    </div> 
+  )
+}
+
+const Register5 = ({ setFormData }) => {
+  const updateFormData = (field, info) => {
+    setFormData((prevState) => ( { ...prevState, [field]: info }))
+  }
+
+  return (
+    <div className='m-register__container--flex'>
+      <div className='m-register__column'>
+        <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
+      </div>
+      <div className="m-register__column">
+        <p>Selecteer de locatie voor de boom</p>
+        <PickLocation setFormData={setFormData}/>
       </div>
     </div> 
   )
