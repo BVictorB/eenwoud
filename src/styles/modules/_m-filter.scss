@@ -8,6 +8,20 @@
   color: white;
   padding: 25px;
   overflow-y: auto;
+  transform: translateX(-350px);
+  transition: transform 300ms ease-in-out;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 30px;
+    cursor: pointer;
+  }
 
   &__map {    
     path {
@@ -27,6 +41,25 @@
 
     input {
       margin-right: 10px;
+    }
+  }
+
+  &__button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: $darkgreen;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(81, 114, 70, 0.892);
     }
   }
 

@@ -1,52 +1,79 @@
 .m-lightbox {
   position: fixed;
-  left: 50%;
-  top: 100px;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 1440px;
-  height: 800px;
+  width: 100vw;
+  height: 100vh;
   background-color: $darkgreen;
   color: white;
-  padding: 10px 25px;
+  padding: 64px 32px;
   display: flex;
-  border-radius: 30px;
-  overflow-y: scroll;
-  border: 3px solid white;
+  overflow-y: auto;
+  transform: translateX(100vw);
+  transition: transform 500ms ease-in-out;
+  top: 0;
+  left: 0;
 
-  &__column {
-    width: 50%;
-    padding: 20px;
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    cursor: pointer;
   }
 
   &__map {
-    height: 500px;
+    height: 440px;
     margin: 50px 0 0;
+
+    &__text {
+      padding-bottom: 64px;
+    }
   }
 
   &__tree {
     width: 200px;
-    margin: 20px 0;
     display: block;
+  }
+
+  &__pictures {
+    display: flex;
+
+    @media (max-width: 600px) {
+      display: block;
+    }
   }
 
   &__picture {
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 30px;
-    display: block;
-  }
+    width: 50%;
+    margin-right: 25px;
 
-  button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    @media (max-width: 600px) {
+      width: 100%;
+      margin-right: 0;
+    }
+    
+    img {
+      width: 100%;
+      border-radius: 30px;
+    }
   }
 
   h1 {
-    font-size: 64px;
+    font-size: 100px;
     font-family: CryptCreep;
     font-weight: 100;
     margin: 0;
+  }
+
+  p {
+    font-size: 18px;
   }
 }

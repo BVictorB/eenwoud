@@ -1,18 +1,14 @@
 .m-register {
   width: 100vw;
   height: 100vh;
-  padding-top: 50px;
+  background-color: $darkgreen;
+  overflow-y: auto;
 
   &__container {
-    width: 80vw;
-    max-width: 1440px;
-    height: 800px;
-    background-color: $darkgreen;
+    max-width: 1200px;
+    padding: 64px 64px 12px;
     margin: 0 auto;
-    border-radius: 30px;
-    padding: 10px 25px;
     color: white;
-    overflow-y: auto;
 
     &--flex {
       display: flex;
@@ -27,6 +23,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    padding: 32px 50px 0;
+
+    @media (max-width: 1000px) {
+      padding: 32px 0 0;
+    }
 
     button {
       background-color: rgb(81, 114, 70);
@@ -59,8 +60,11 @@
   }
 
   h1 {
-    margin: 0;
+    font-size: 64px;
+    font-family: CryptCreep;
+    font-weight: 100;
     text-align: center;
+    margin: 24px 0 0 0;
   }
 
   p {

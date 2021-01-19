@@ -7,6 +7,25 @@
     cursor: pointer;
   }
 
+  &__register-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 240px;
+    height: 60px;
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: $darkgreen;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(81, 114, 70, 0.892);
+    }
+  }
+
   &__tooltip {
     position: fixed;
     top: -100vh;

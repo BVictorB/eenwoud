@@ -3,7 +3,7 @@ import { select, zoom, geoMercator } from 'd3'
 import trees from '../assets/treeData'
 import Filter from '../components/Filter'
 
-const Map = ({ setLightboxContent }) => {
+const Map = ({ setLightboxContent, setNavigation, setShowLightbox }) => {
   const
     [filteredTreeData, setFilteredTreeData] = useState(trees),
     [showTooltip, setShowTooltip] = useState(true),
@@ -19,12 +19,18 @@ const Map = ({ setLightboxContent }) => {
 
   return (
     <>
+      <div className='m-map__register-button' onClick={() => setNavigation('register')}>
+        <p>Meld je eigen boom aan!</p>
+      </div>
       <Filter treeData={trees} filteredTreeData={filteredTreeData} setFilteredTreeData={setFilteredTreeData} />
       <div className="m-map">
         <svg ref={svgEl} width="100%" height="100%">
           <g className="group" ref={svgGroup}>
             {filteredTreeData.map((tree, index) => (
-              <image onClick={() => setLightboxContent(tree)} href={tree.image} key={index} className="tree" x={projection(tree.coords)[0]-20} y={projection(tree.coords)[1]-20} width="40" height="40" />
+              <image onClick={() => {
+                setLightboxContent(tree)
+                setShowLightbox(true)
+              }} href={tree.image} key={index} className="tree" x={projection(tree.coords)[0]-20} y={projection(tree.coords)[1]-20} width="40" height="40" />
             ))}
           </g>
         </svg>
