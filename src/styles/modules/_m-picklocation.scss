@@ -3,4 +3,14 @@
   background-color: #90B0A1;
   height: 400px;
   border-radius: 30px;
+  position: relative;
+
+  &__tree {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    pointer-events: none;
+  }
 }

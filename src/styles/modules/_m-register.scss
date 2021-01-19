@@ -10,6 +10,10 @@
     margin: 0 auto;
     color: white;
 
+    @media (max-width: 1000px) {
+      padding: 12px 32px 12px;
+    }
+
     &--flex {
       display: flex;
 
@@ -40,10 +44,39 @@
       height: 60px;
       color: white;
       font-size: 20px;
+      cursor: pointer;
 
       &:hover, &:focus {
         background-color: rgba(81, 114, 70, 0.529);
       }
+    }
+  }
+
+  &__tree-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tree-button {
+    height: 200px;
+    width: 180px;
+    margin: 0 10px 10px 0;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 90%;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: #90b0a1;
     }
   }
 
@@ -88,7 +121,7 @@
         border-radius: 10px;
         outline: none;
 
-        @media (max-width: 1400px) {
+        @media (max-width: 600px) {
           width: 100%;
         }
       }
@@ -106,6 +139,14 @@
       padding: 10px;
       margin-top: 6px;
       outline: none;
+
+      @media (max-width: 1000px) {
+        width: 60%;
+      }
+
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
 }

@@ -22,7 +22,11 @@ const Map = ({ setLightboxContent, setNavigation, setShowLightbox }) => {
       <div className='m-map__register-button' onClick={() => setNavigation('register')}>
         <p>Meld je eigen boom aan!</p>
       </div>
-      <Filter treeData={trees} filteredTreeData={filteredTreeData} setFilteredTreeData={setFilteredTreeData} />
+      <Filter 
+        treeData={trees} 
+        filteredTreeData={filteredTreeData} 
+        setFilteredTreeData={setFilteredTreeData} 
+      />
       <div className="m-map">
         <svg ref={svgEl} width="100%" height="100%">
           <g className="group" ref={svgGroup}>

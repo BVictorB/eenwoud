@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { select, zoom, geoMercator, pointer } from 'd3'
 import trees from '../assets/treeData'
+import tree from '../assets/images/treesNew/populier.png'
 
 const PickLocation = ({ setFormData }) => {
   const
@@ -24,6 +25,7 @@ const PickLocation = ({ setFormData }) => {
             ))}
           </g>
         </svg>
+        <img className='m-picklocation__tree' src={tree} alt=''></img>
       </div>
     </>
   )

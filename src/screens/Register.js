@@ -5,8 +5,62 @@ import TextareaInput from '../components/TextareaInput'
 import RadioInput from '../components/RadioInput'
 import PickLocation from '../components/PickLocation'
 
+import beuk from '../assets/images/treesNew/beuk.png'
+import denneboom from '../assets/images/treesNew/denneboom.png'
+import gatalpa from '../assets/images/treesNew/gatalpa.png'
+import ginkobiloba from '../assets/images/treesNew/ginkobiloba.png'
+import noorseesdoorn from '../assets/images/treesNew/noorseesdoorn.png'
+import olijfboom from '../assets/images/treesNew/olijfboom.png'
+import populier from '../assets/images/treesNew/populier.png'
+import rodebeuk from '../assets/images/treesNew/rodebeuk.png'
+import treurbeuk from '../assets/images/treesNew/treurbeuk.png'
+import zomereik from '../assets/images/treesNew/zomereik.png'
+
+const treeTypes = [
+  {
+    name: 'Beuk',
+    image: beuk
+  },
+  {
+    name: 'Denneboom',
+    image: denneboom
+  },
+  {
+    name: 'Gatalpa',
+    image: gatalpa
+  },
+  {
+    name: 'Ginko Biloba',
+    image: ginkobiloba
+  },
+  {
+    name: 'Noorse Esdoorn',
+    image: noorseesdoorn
+  },
+  {
+    name: 'Olijfboom',
+    image: olijfboom
+  },
+  {
+    name: 'Populier',
+    image: populier
+  },
+  {
+    name: 'Rode beuk',
+    image: rodebeuk
+  },
+  {
+    name: 'Treurbeuk',
+    image: treurbeuk
+  },
+  {
+    name: 'Zomereik',
+    image: zomereik
+  },
+]
+
 const Register = () => {
-  const [step, setStep] = useState(4)
+  const [step, setStep] = useState(5)
   const [formData, setFormData] = useState({
     name: null,
     age: null,
@@ -15,7 +69,8 @@ const Register = () => {
     treeLocation: null,
     treeDescription: null,
     treeReason: null,
-    emotion: null
+    emotion: null,
+    treeImage: null
   })
 
   const nextPage = () => {
@@ -39,10 +94,12 @@ const Register = () => {
       {step === 2 ? <Register3 setFormData={setFormData} /> : null}
       {step === 3 ? <Register4 setFormData={setFormData} /> : null}
       {step === 4 ? <Register5 setFormData={setFormData} /> : null}
+      {step === 5 ? <Register6 setFormData={setFormData} setStep={setStep} /> : null}
+      {step === 6 ? <Register7 setFormData={setFormData} /> : null}
       <div className="m-register__button-container">
         {step !== 0 ? <button onClick={() => prevPage()}>Vorige</button> : null}
-        {step !== 4 ? <button onClick={() => nextPage()}>Volgende</button> : null}
-        {step === 4 ? <button onClick={() => finishForm()}>finish</button> : null}
+        {step !== 6 ? <button onClick={() => nextPage()}>Volgende</button> : null}
+        {step === 6 ? <button onClick={() => finishForm()}>finish</button> : null}
       </div>
     </div>
   </div>
@@ -150,6 +207,50 @@ const Register5 = ({ setFormData }) => {
       <div className="m-register__column">
         <p>Selecteer de locatie voor de boom</p>
         <PickLocation setFormData={setFormData}/>
+      </div>
+    </div> 
+  )
+}
+
+const Register6 = ({ setFormData, setStep }) => {
+  const updateFormData = (field, info) => {
+    setFormData((prevState) => ( { ...prevState, [field]: info }))
+  }
+
+  return (
+    <div className='m-register__container--flex'>
+      <div className='m-register__column'>
+        <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
+      </div>
+      <div className='m-register__column'>
+        <p>Selecteer een boom</p>
+        <div className='m-register__tree-container'>
+          {treeTypes.map((treeType, index) => (
+            <div className='m-register__tree-button' key={index} onClick={() => {
+              updateFormData('treeImage', treeType.name)
+              setStep(prevState => prevState + 1)
+            }} >
+              <img src={treeType.image} alt=''></img>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div> 
+  )
+}
+
+const Register7 = ({ setFormData }) => {
+  const updateFormData = (field, info) => {
+    setFormData((prevState) => ( { ...prevState, [field]: info }))
+  }
+
+  return (
+    <div className='m-register__container--flex'>
+      <div className='m-register__column'>
+        <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
+      </div>
+      <div className='m-register__column'>
+        <h2>finished</h2>
       </div>
     </div> 
   )
