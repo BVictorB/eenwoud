@@ -33,7 +33,7 @@ This project is also being hosted on Netlify, check it out [here](https://bvicto
 ## Installation
 - Clone this repo
 ```
-git clone https://github.com/BVictorB/ferry-data-visualization.git .
+git clone https://github.com/BVictorB/eenwoud.git .
 ```
 - Install all NPM packages
 ```
