@@ -12,29 +12,31 @@ const Lightbox = ({ lightboxContent, geoDataNetherlands, setShowLightbox, showLi
   return (
     <div className={showLightbox ? 'm-lightbox m-lightbox--active' : 'm-lightbox'}>
       <div className="m-lightbox__container">
-        <div className='m-lightbox__column--lg'>
-          <img className='m-lightbox__close-button' onClick={() => setShowLightbox(false)} src={closeIcon} alt=""/>
-          <h1>De {lightboxContent.tree} van {lightboxContent.name}</h1>
-          <p>{lightboxContent.text}</p>
-          <p>{lightboxContent.text}</p> 
-          <div className="m-lightbox__pictures">
-            {lightboxContent.pictures.map((picture, index) => (
-              <div className='m-lightbox__picture' key={index}>
-                <img src={picture} alt=""/>
-                <p>{lightboxContent.pictureText[index]}</p>
-              </div>
-            ))}
+        <img className='m-lightbox__close-button' onClick={() => setShowLightbox(false)} src={closeIcon} alt=""/>
+        <div className="m-lightbox__intro-container">
+          <div className="m-lightbox__intro-container__column">
+            <h1>De {lightboxContent.tree}</h1>
+            <h2>van {lightboxContent.name}</h2>
+          </div>
+          <div className="m-lightbox__intro-container__column">
+            <img src={lightboxContent.image} alt=""/>
+            <p>Een {lightboxContent.tree} kan 500 tot 600 jaar oud worden.</p>
           </div>
         </div>
-        <div className='m-lightbox__column--sm'>
-          <img className='m-lightbox__tree' src={lightboxContent.image} alt=""/>
-          <p>De levensverwachting van een {lightboxContent.tree} ligt tussen de 500 en 600 jaar.</p>
-          <div className='m-lightbox__map'>
-            {geoDataNetherlands && lightboxContent.coordsNL && lightboxContent.image ? <TreeMap geoDataNetherlands={geoDataNetherlands} coordsNL={lightboxContent.coordsNL} treeImage={lightboxContent.image}/> : null}
-          </div>
-          <p className='m-lightbox__map__text'>De {lightboxContent.tree} van {lightboxContent.name} staat in ....</p>
+        <p>{lightboxContent.text}</p>
+        <p>{lightboxContent.text}</p> 
+        <div className="m-lightbox__pictures">
+          {lightboxContent.pictures.map((picture, index) => (
+            <div className='m-lightbox__picture' key={index}>
+              <img src={picture} alt=""/>
+              <p>{lightboxContent.pictureText[index]}</p>
+            </div>
+          ))}
         </div>
-        
+        <div className='m-lightbox__map'>
+          {geoDataNetherlands && lightboxContent.coordsNL && lightboxContent.image ? <TreeMap geoDataNetherlands={geoDataNetherlands} coordsNL={lightboxContent.coordsNL} treeImage={lightboxContent.image}/> : null}
+        </div>
+        <p className='m-lightbox__map__text'>De {lightboxContent.tree} van {lightboxContent.name} staat in {lightboxContent.province}</p>
       </div>
     </div>
   )
