@@ -33,10 +33,31 @@
     transform: translateX(-50%);
     background-color: $darkgreen;
     width: 500px;
+    max-width: 90%;
     height: 200px;
     transition: top 500ms ease-in-out;
     padding: 20px;
     border-radius: 30px;
+    border: 1px solid white;
+
+    button {
+      background-color: white;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      width: 120px;
+      height: 50px;
+      color: #053849;
+      font-size: 20px;
+      cursor: pointer;
+  
+      &:hover, &:focus {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
 
     &--active {
       top: 200px;

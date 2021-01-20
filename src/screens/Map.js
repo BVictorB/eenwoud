@@ -39,9 +39,9 @@ const Map = ({ setLightboxContent, setNavigation, setShowLightbox }) => {
           </g>
         </svg>
         <div className={showTooltip ? 'm-map__tooltip m-map__tooltip--active' : 'm-map__tooltip'}>
-          <h2>Zoom, pan, click etc etc</h2>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis cumque non ipsam consectetur, blanditiis dolores dolore exercitationem quidem soluta ipsum.</p>
-          <button onClick={() => setShowTooltip(false)}>Hide</button>
+          <h2>Welkom in het Eenwoud!</h2>
+          <p>Gebruik de filters aan de linkerkant van het scherm om te filteren tussen bomen in het Eenwoud.</p>
+          <button onClick={() => setShowTooltip(false)}>Verberg</button>
         </div>
       </div>
     </>

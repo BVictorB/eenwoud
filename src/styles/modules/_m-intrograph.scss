@@ -1,0 +1,60 @@
+.m-intrograph {
+  height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px;
+  color: white;
+  position: relative;
+
+  &__container {
+    display: flex;
+
+    @media (max-width: 900px) {
+      display: block;
+    }
+  }
+
+  &__column {
+    width: 50%;
+
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+
+    img {
+      height: 600px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+
+  h2 {
+    font-size: 64px;
+    font-family: CryptCreep;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  button {
+    background-color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    width: 200px;
+    height: 60px;
+    color: #053849;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}

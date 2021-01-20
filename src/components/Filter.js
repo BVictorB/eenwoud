@@ -64,7 +64,7 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
             {treeType}
           </label>
         ))}
-        <h2>Emotie verhaal</h2>
+        <h2>Thema</h2>
         <label>
           <input 
             type='radio' 

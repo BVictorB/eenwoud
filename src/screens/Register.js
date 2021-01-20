@@ -59,19 +59,9 @@ const treeTypes = [
   },
 ]
 
-const Register = () => {
-  const [step, setStep] = useState(5)
-  const [formData, setFormData] = useState({
-    name: null,
-    age: null,
-    type: null,
-    treeAge: null,
-    treeLocation: null,
-    treeDescription: null,
-    treeReason: null,
-    emotion: null,
-    treeImage: null
-  })
+const Register = ({ setNavigation }) => {
+  const [step, setStep] = useState(0)
+  const [formData, setFormData] = useState({})
 
   const nextPage = () => {
     setStep(prevState => prevState + 1)
@@ -82,7 +72,7 @@ const Register = () => {
   }
 
   const finishForm = () => {
-    console.log(formData)
+    setNavigation('map')
   }
 
   return (
@@ -93,13 +83,12 @@ const Register = () => {
       {step === 1 ? <Register2 setFormData={setFormData} /> : null}
       {step === 2 ? <Register3 setFormData={setFormData} /> : null}
       {step === 3 ? <Register4 setFormData={setFormData} /> : null}
-      {step === 4 ? <Register5 setFormData={setFormData} /> : null}
-      {step === 5 ? <Register6 setFormData={setFormData} setStep={setStep} /> : null}
-      {step === 6 ? <Register7 setFormData={setFormData} /> : null}
+      {step === 4 ? <Register5 setFormData={setFormData} setStep={setStep} /> : null}
+      {step === 5 ? <Register6 setFormData={setFormData} formData={formData} /> : null}
       <div className="m-register__button-container">
         {step !== 0 ? <button onClick={() => prevPage()}>Vorige</button> : null}
-        {step !== 6 ? <button onClick={() => nextPage()}>Volgende</button> : null}
-        {step === 6 ? <button onClick={() => finishForm()}>finish</button> : null}
+        {step !== 5 ? <button onClick={() => nextPage()}>Volgende</button> : null}
+        {step === 5 ? <button onClick={() => finishForm()}>Afronden</button> : null}
       </div>
     </div>
   </div>
@@ -117,9 +106,10 @@ const Register1 = ({ setFormData }) => {
         <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
       </div>
       <div className='m-register__column'>
-        <p>Jouw gegevens</p>
+        <h2>Jouw gegevens</h2>
         <TextInput text={'Wat is jouw naam?'} onTextChange={(text) => updateFormData('name', text)} />
         <TextInput text={'Hoe oud ben je?'} onTextChange={(text) => updateFormData('age', text)} />
+        <TextInput text={'Wat is je email adres?'} onTextChange={(text) => updateFormData('email', text)} />
         <FileInput text={'Upload een foto van de boom die je wilt voordragen'} />
         <FileInput text={'Upload een foto van een detail van de boom'} />
         <FileInput text={'Upload een foto van jou met de boom'} />
@@ -139,15 +129,10 @@ const Register2 = ({ setFormData }) => {
         <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
       </div>
       <div className="m-register__column">
-        <p>De boom</p>
-        <RadioInput 
-          text={'Wat voor soort boom draag je voor?'}
-          options={['Eik', 'Beuk', 'Wilg', 'Appelboom', 'Olijfboom', 'Overige', 'Weet ik niet']}
-          name={'treeType'}
-          onRadioChange={(option) => updateFormData('type', option)}
-        />
-        <TextInput text={'Hoe oud denk je dat de boom ongeveer is?'} onTextChange={(text) => updateFormData('treeAge', text)} />
-        <TextInput text={'Wat is de locatie van de boom?'} onTextChange={(text) => updateFormData('treeLocation', text)} />
+        <h2>De boom</h2>
+        <TextInput text={'Wat voor een soort boom draag je voor?'} onTextChange={(text) => updateFormData('treeType', text)} />
+        <TextInput text={'Wat is de locatie van de boom? (vul hier de coördinaten in)'} onTextChange={(text) => updateFormData('treeAge', text)} />
+        <TextInput text={'Hoe oud denk je dat de boom ongeveer is?'} onTextChange={(text) => updateFormData('treeLocation', text)} />
       </div>
     </div> 
   )
@@ -164,7 +149,7 @@ const Register3 = ({ setFormData }) => {
         <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
       </div>
       <div className="m-register__column">
-        <p>Reden van voordragen</p>
+        <h2>Reden van voordragen</h2>
         <TextareaInput text={'Wat betekent deze boom voor jou?'} onTextChange={(text) => updateFormData('treeDescription', text)} />
         <TextareaInput text={'Waarom draag je deze boom voor?'} onTextChange={(text) => updateFormData('treeReason', text)} />
       </div>
@@ -184,7 +169,7 @@ const Register4 = ({ setFormData }) => {
       </div>
       <div className="m-register__column">
         <RadioInput 
-          text={'Welke emotie hoort bij je verhaal?'}
+          text={'Welk thema hoort bij je verhaal?'}
           options={['Liefde', 'Geluk']}
           name={'emotion'}
           onRadioChange={(option) => updateFormData('emotion', option)}
@@ -194,25 +179,7 @@ const Register4 = ({ setFormData }) => {
   )
 }
 
-const Register5 = ({ setFormData }) => {
-  const updateFormData = (field, info) => {
-    setFormData((prevState) => ( { ...prevState, [field]: info }))
-  }
-
-  return (
-    <div className='m-register__container--flex'>
-      <div className='m-register__column'>
-        <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
-      </div>
-      <div className="m-register__column">
-        <p>Selecteer de locatie voor de boom</p>
-        <PickLocation setFormData={setFormData}/>
-      </div>
-    </div> 
-  )
-}
-
-const Register6 = ({ setFormData, setStep }) => {
+const Register5 = ({ setFormData, setStep }) => {
   const updateFormData = (field, info) => {
     setFormData((prevState) => ( { ...prevState, [field]: info }))
   }
@@ -223,11 +190,12 @@ const Register6 = ({ setFormData, setStep }) => {
         <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
       </div>
       <div className='m-register__column'>
-        <p>Selecteer een boom</p>
+        <h2>Kies de boomavatar die jouw boom het beste representeert</h2>
         <div className='m-register__tree-container'>
           {treeTypes.map((treeType, index) => (
             <div className='m-register__tree-button' key={index} onClick={() => {
               updateFormData('treeImage', treeType.name)
+              updateFormData('treePicture', treeType.image)
               setStep(prevState => prevState + 1)
             }} >
               <img src={treeType.image} alt=''></img>
@@ -239,7 +207,7 @@ const Register6 = ({ setFormData, setStep }) => {
   )
 }
 
-const Register7 = ({ setFormData }) => {
+const Register6 = ({ setFormData, formData }) => {
   const updateFormData = (field, info) => {
     setFormData((prevState) => ( { ...prevState, [field]: info }))
   }
@@ -249,8 +217,9 @@ const Register7 = ({ setFormData }) => {
       <div className='m-register__column'>
         <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
       </div>
-      <div className='m-register__column'>
-        <h2>finished</h2>
+      <div className="m-register__column">
+        <h2>Selecteer de locatie voor de boom</h2>
+        <PickLocation setFormData={setFormData} formData={formData}/>
       </div>
     </div> 
   )
