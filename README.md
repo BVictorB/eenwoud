@@ -28,7 +28,7 @@ Most components are split up into the 'components' folder, and I placed the thre
 For styling I used SCSS (since this makes me a lot more productive) and for the naming/classing of elements I used the BEM method (Block, Element, Module).
 
 ## Live version
-This project is also being hosted on Netlify, check it out [here]()!
+This project is also being hosted on Netlify, check it out [here](https://bvictorb-eenwoud.netlify.app/)!
 
 ## Installation
 - Clone this repo
