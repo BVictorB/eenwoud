@@ -26,6 +26,7 @@ We have also created the register part of the concept, where you can register a 
 I have used the awesome ReactJS framework for this project. I decided to use ReactJS since I already had some experience with it, and because it was nice to use for the state management of the app.
 Most components are split up into the 'components' folder, and I placed the three main screens (intro, map and register) in the 'screens folder'.
 For styling I used SCSS (since this makes me a lot more productive) and for the naming/classing of elements I used the BEM method (Block, Element, Module).
+For the map with the trees plotted onto it I have used D3.js. This is a great library for visualizing data.
 
 ## Live version
 This project is also being hosted on Netlify, check it out [here](https://bvictorb-eenwoud.netlify.app/)!
