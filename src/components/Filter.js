@@ -15,7 +15,7 @@ const Filter = ({ treeData, setFilteredTreeData }) => {
     }),
     treeTypes = [...new Set(treeData.map(item => item.tree))],
     emotions = [...new Set(treeData.map(item => item.emotion))],
-    [showFilter, setShowFilter] = useState(true)
+    [showFilter, setShowFilter] = useState(false)
 
   useEffect(() => {
     const filteredTrees = treeData.filter(item => {

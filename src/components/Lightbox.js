@@ -24,15 +24,16 @@ const Lightbox = ({ lightboxContent, geoDataNetherlands, setShowLightbox, showLi
           </div>
         </div>
         <p>{lightboxContent.text}</p>
-        <p>{lightboxContent.text}</p> 
+        <p>{lightboxContent.text2}</p> 
         <div className="m-lightbox__pictures">
           {lightboxContent.pictures.map((picture, index) => (
             <div className='m-lightbox__picture' key={index}>
               <img src={picture} alt=""/>
-              <p>{lightboxContent.pictureText[index]}</p>
+              {/* <p>{lightboxContent.pictureText[index]}</p> */}
             </div>
           ))}
         </div>
+        <h2 className='m-lightbox__map__title'>Oorsprongkelijke locatie van de {lightboxContent.tree}</h2>
         <div className='m-lightbox__map'>
           {geoDataNetherlands && lightboxContent.coordsNL && lightboxContent.image ? <TreeMap geoDataNetherlands={geoDataNetherlands} coordsNL={lightboxContent.coordsNL} treeImage={lightboxContent.image}/> : null}
         </div>

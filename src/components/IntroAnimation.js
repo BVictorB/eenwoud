@@ -1,7 +1,6 @@
 import drops from '../assets/images/animation/drops.png'
 import co2 from '../assets/images/animation/co2.png'
 import magnifyingGlassCells from '../assets/images/animation/magnifying-glass-cells.png'
-import magnifyingGlassLeaf from '../assets/images/animation/magnifying-glass-leaf.png'
 import oxygen from '../assets/images/animation/oxygen.png'
 import person from '../assets/images/animation/person.png'
 import sun from '../assets/images/animation/sun.png'
@@ -31,7 +30,7 @@ const IntroAnimation = () => {
     },
     {
       title: 'Koolstofdioxide',
-      text: 'Een plant ademt door kleine mondjes aan de onderkant van het blad. Dit noemen we de huidmonjes. Via de huidmondjes neemt de plant koolstofdioxide op.'
+      text: 'Een plant ademt door kleine mondjes aan de onderkant van het blad. Dit noemen we de huidmondjes. Via de huidmondjes neemt de plant koolstofdioxide op.'
     },
     {
       title: 'Zonlicht',
@@ -60,7 +59,7 @@ const IntroAnimation = () => {
         <img src={tree} className='m-introanimation__tree' alt='' />
         <img src={co2} className={step === 1 ? 'm-introanimation__co2 m-introanimation__co2--active' : 'm-introanimation__co2'} alt='' />
         <img src={person} className={step === 1 ? 'm-introanimation__person m-introanimation__person--active' : 'm-introanimation__person'} alt='' />
-        <img src={magnifyingGlassLeaf} className={step === 2 ? 'm-introanimation__magnify-leaf m-introanimation__magnify-leaf--active' : 'm-introanimation__magnify-leaf'} alt='' />
+        <img src={magnifyingGlassCells} className={step === 2 ? 'm-introanimation__magnify-leaf m-introanimation__magnify-leaf--active' : 'm-introanimation__magnify-leaf'} alt='' />
         <img src={sun} className={step === 3 ? 'm-introanimation__sun m-introanimation__sun--active' : 'm-introanimation__sun'} alt='' />
         <img src={sunbeams} className={step === 3 ? 'm-introanimation__sunbeams m-introanimation__sunbeams--active' : 'm-introanimation__sunbeams'} alt='' />
         <img src={drops} className={step === 4 ? 'm-introanimation__drops m-introanimation__drops--active' : 'm-introanimation__drops'} alt='' />
