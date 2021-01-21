@@ -85,10 +85,11 @@ const Register = ({ setNavigation }) => {
       {step === 3 ? <Register4 setFormData={setFormData} /> : null}
       {step === 4 ? <Register5 setFormData={setFormData} setStep={setStep} /> : null}
       {step === 5 ? <Register6 setFormData={setFormData} formData={formData} /> : null}
+      {step === 6 ? <Register7 setFormData={setFormData} /> : null}
       <div className="m-register__button-container">
         {step !== 0 ? <button onClick={() => prevPage()}>Vorige</button> : null}
-        {step !== 5 ? <button onClick={() => nextPage()}>Volgende</button> : null}
-        {step === 5 ? <button onClick={() => finishForm()}>Afronden</button> : null}
+        {step !== 6 ? <button onClick={() => nextPage()}>Volgende</button> : null}
+        {step === 6 ? <button onClick={() => finishForm()}>Afronden</button> : null}
       </div>
     </div>
   </div>
@@ -111,6 +112,7 @@ const Register1 = ({ setFormData }) => {
         <TextInput text={'Hoe oud ben je?'} onTextChange={(text) => updateFormData('age', text)} />
         <TextInput text={'Wat is je email adres?'} onTextChange={(text) => updateFormData('email', text)} />
         <FileInput text={'Upload een foto van de boom die je wilt voordragen'} />
+        <FileInput text={'Upload een foto met een portret van de boom'} />
         <FileInput text={'Upload een foto van een detail van de boom'} />
         <FileInput text={'Upload een foto van jou met de boom'} />
       </div>
@@ -133,6 +135,9 @@ const Register2 = ({ setFormData }) => {
         <TextInput text={'Wat voor een soort boom draag je voor?'} onTextChange={(text) => updateFormData('treeType', text)} />
         <TextInput text={'Wat is de locatie van de boom? (vul hier de coördinaten in)'} onTextChange={(text) => updateFormData('treeAge', text)} />
         <TextInput text={'Hoe oud denk je dat de boom ongeveer is?'} onTextChange={(text) => updateFormData('treeLocation', text)} />
+        <TextInput text={'In welke levensfase denk je dat de boom nu ongeveer zit? Als 1 net geboren is en 10 overleden'} onTextChange={(text) => updateFormData('treeLifePhase', text)} />
+        <TextInput text={'En in welke fase zit je zelf, denk je?'} onTextChange={(text) => updateFormData('personLifePhase', text)} />
+        <TextInput text={'Welke gedacht komt er bij je op als je beide levensfases zo invult?'} onTextChange={(text) => updateFormData('lifePhaseThought', text)} />
       </div>
     </div> 
   )
@@ -170,7 +175,7 @@ const Register4 = ({ setFormData }) => {
       <div className="m-register__column">
         <RadioInput 
           text={'Welk thema hoort bij je verhaal?'}
-          options={['Liefde', 'Geluk']}
+          options={['Geluk', 'Geschiedenis', 'Jeugd', 'Kalmerend', 'Liefde', 'Plezier', 'Thuis zijn', 'Verbinding', 'Verlies van dierbare']}
           name={'emotion'}
           onRadioChange={(option) => updateFormData('emotion', option)}
         />
@@ -220,6 +225,30 @@ const Register6 = ({ setFormData, formData }) => {
       <div className="m-register__column">
         <h2>Selecteer de locatie voor de boom</h2>
         <PickLocation setFormData={setFormData} formData={formData}/>
+      </div>
+    </div> 
+  )
+}
+
+const Register7 = ({ setFormData }) => {
+  const updateFormData = (field, info) => {
+    setFormData((prevState) => ( { ...prevState, [field]: info }))
+  }
+
+  return (
+    <div className='m-register__container--flex'>
+      <div className='m-register__column'>
+        <p>Leuk dat jij je boom voor wilt dragen! Eenwoud wilt graag een bos vormen dat voor wel duizend jaar mag blijven bestaan. De nazaten van jouw boom kunnen hier onderdeel van uitmaken. Vul daarom hier de gegevens in van jouw boom om hem in het Eenwoud te plaatsen.</p>
+      </div>
+      <div className="m-register__column">
+        <h2>Bedankt voor het aanmelden van je boom!</h2>
+        <TextareaInput text={'Heb je nog tips, suggesties of opmerkingen voor Eenwoud?'} onTextChange={(text) => updateFormData('suggestions', text)} />
+        <RadioInput 
+          text={'Wil je op de hoogte gehouden worden van ontwikkelingen rondom Eenwoud?'}
+          options={['Ja, stuur mij zo nu en dan een mail met updates', 'Nee, ik hoef geen updates over Eenwoud te ontvangen']}
+          name={'newsletter'}
+          onRadioChange={(option) => updateFormData('newsletter', option)}
+        />
       </div>
     </div> 
   )

@@ -13,9 +13,9 @@ const Intro = ({ setNavigation }) => {
     [zoom, setZoom] = useState(false)
 
   document.addEventListener('scroll', () => {
-    window.innerHeight*3.5 > window.scrollY && window.scrollY > window.innerHeight/3 ? setPlanetActive(true) : setPlanetActive(false)
-    window.scrollY > window.innerHeight/3 ? setHidePlanet(true) : setHidePlanet(false)
-    window.scrollY > window.innerHeight*3.5 ? setBottomPlanet(true) : setBottomPlanet(false)
+    window.innerHeight*4.5 > window.scrollY && window.scrollY > window.innerHeight/4 ? setPlanetActive(true) : setPlanetActive(false)
+    window.scrollY > window.innerHeight/4 ? setHidePlanet(true) : setHidePlanet(false)
+    window.scrollY > window.innerHeight*4.5 ? setBottomPlanet(true) : setBottomPlanet(false)
   })
   return (
     <div className='m-intro'>
@@ -29,6 +29,10 @@ const Intro = ({ setNavigation }) => {
       <IntroAnimation />
       <IntroGraph />
       <IntroGraph2 />
+      <div className="m-intro__call-to-action">
+        <h2>Maak Nederland groener, meld een boom aan!</h2>
+        <button onClick={() => setNavigation('register')}>Meld een boom aan</button>
+      </div>
       <div className={`m-intro__planet ${bottomPlanet ? '' : 'hide'} ${zoom ? 'zoom' : ''} m-intro__planet--clickable`}>
         <Planet className='planet' onClick={() => {
           setZoom(true)

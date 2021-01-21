@@ -42,7 +42,7 @@
         text-align: center;
       }
 
-      img {
+      &__image {
         width: 100%;
       }
     }
@@ -65,6 +65,12 @@
       padding-bottom: 64px;
       text-align: center;
     }
+  }
+
+  &__audio {
+    display: inline-block;
+    width: 50px;
+    margin-bottom: 12px;
   }
 
   &__pictures {

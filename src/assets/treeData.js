@@ -1,3 +1,4 @@
+// Trees
 import beuk from './images/trees/beuk.png'
 import denneboom from './images/trees/denneboom.png'
 import gatalpa from './images/trees/gatalpa.png'
@@ -9,6 +10,7 @@ import rodebeuk from './images/trees/rodebeuk.png'
 import treurbeuk from './images/trees/treurbeuk.png'
 import zomereik from './images/trees/zomereik.png'
 
+// Pictures
 import han1 from './images/pictures/han1.png'
 import han2 from './images/pictures/han2.png'
 import geert1 from './images/pictures/geert1.png'
@@ -27,6 +29,13 @@ import katrien1 from './images/pictures/katrien1.jpg'
 import katrien2 from './images/pictures/katrien2.jpg'
 import gonul1 from './images/pictures/gonul1.jpg'
 import gonul2 from './images/pictures/gonul2.jpg'
+
+// Audio
+import audioPopko from './audio/popko.mp3'
+import audioLotte from './audio/lotte.mp3'
+import audioMarian from './audio/marian.mp3'
+import audioMarco from './audio/marco.mp3'
+
 
 const randomNumber = (limit) => Math.random() * limit
 
@@ -77,7 +86,8 @@ const trees = [
     province: 'Noord-Brabant',
     treeAge: 50,
     personAge: 49,
-    expectedAge: 600
+    expectedAge: 600,
+    audio: audioMarco
   },
   {
     tree: 'beuk',
@@ -95,7 +105,8 @@ const trees = [
     province: 'Noord-Brabant',
     treeAge: 1,
     personAge: 57,
-    expectedAge: 600
+    expectedAge: 600,
+    audio: audioMarian
   },
   {
     tree: 'treurbeuk',
@@ -111,7 +122,8 @@ const trees = [
     province: 'Gelderland',
     treeAge: 200,
     personAge: 61,
-    expectedAge: 600
+    expectedAge: 600,
+    audio: audioPopko
   },
   {
     tree: 'populier',
@@ -158,7 +170,8 @@ const trees = [
     province: 'Gelderland',
     treeAge: 15,
     personAge: 40,
-    expectedAge: 600
+    expectedAge: 600,
+    audio: audioLotte
   },
   {
     tree: 'gatalpa',

@@ -28,6 +28,43 @@
     }
   }
 
+  &__call-to-action {
+    height: 100vh;
+    padding-top: 100px;
+
+    h2 {
+      font-size: 128px;
+      font-family: CryptCreep;
+      font-weight: 100;
+      margin: 0;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        font-size: 64px;
+      }
+    }
+    
+    button {
+      background-color: white;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      margin: 0 auto;
+      font-weight: 600;
+      width: 400px;
+      height: 90px;
+      color: #053849;
+      font-size: 60px;
+      font-family: CryptCreep;
+      cursor: pointer;
+      display: block;
+  
+      &:hover, &:focus {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
   &__info {
     height: 100vh;
     max-width: 1440px;

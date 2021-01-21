@@ -22,7 +22,7 @@ const IntroAnimation = () => {
   const animationSteps = [
     {
       title: 'Fotosynthese',
-      text: 'Fotosynthese is het proces waarbij planten koolstofdioxide(denk aan uitlaatgassen) omzetten in zuurstof. Wij hebben zuurstof nodig om te kunnen leven, planten zijn dus onmisbaar voor ons. Van alle planten vangen bomen verreweg het meeste koolstofdioxide op en produceert dan ook de meeste zuurstof. Voor fotosynthese zijn 3 elementen nodig'
+      text: 'Fotosynthese is het proces waarbij planten koolstofdioxide(denk aan uitlaatgassen) omzetten in zuurstof. Wij hebben zuurstof nodig om te kunnen leven. Planten zijn dus onmisbaar voor ons. Van alle planten vangen bomen verreweg het meeste koolstofdioxide op en produceert dan ook de meeste zuurstof. Voor fotosynthese zijn 3 elementen nodig'
     },
     {
       title: 'Koolstofdioxide',
